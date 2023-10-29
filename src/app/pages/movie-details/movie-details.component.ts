@@ -45,17 +45,18 @@ export class MovieDetailsComponent implements OnInit {
     });
   }
 
-  getVideo(id:any)
-  {
-    this.service.getMovieVideo(id).subscribe((result)=>{
-        console.log(result,'getMovieVideo#');
-        result.results.forEach((element:any) => {
-            if(element.type=="Trailer")
-            {
-              this.getMovieVideoResult = element.key;
-            }
+  getVideo(id: any) {
+    this.service.getMovieVideo(id).subscribe((result) => {
+      console.log(result, 'getMovieVideo#');
+      
+      // Check if result is defined and contains results property
+      if (result && result.results) {
+        result.results.forEach((element: any) => {
+          if (element.type == "Trailer") {
+            this.getMovieVideoResult = element.key;
+          }
         });
-
+      }
     });
   }
 
