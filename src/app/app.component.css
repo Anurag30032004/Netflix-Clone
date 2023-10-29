@@ -6,5 +6,12 @@
 
 .navbar-nav .nav-item .nav-link
 {
-    color: #E50914;
+    color:#E50914;
+}
+
+.content-body{
+    min-height: 100%;
+    padding: 60px 1rem;
+    background: red;
+    display: block;
 }

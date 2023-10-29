@@ -1,20 +1,30 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { Component,OnInit } from '@angular/core';
 
-const routes: Routes = [
-  {path: '', component: AppComponent, children: [
-    {
-      path: '', component: LoginComponent
-    }
-  ]}
-];
+import {FormGroup, FormControl, Validators} from '@angular/forms';
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class AppRoutingModule { }
+export class LoginComponent implements OnInit {
 
-export { LoginComponent };
+  loginForm! : FormGroup;
+  hide=true;
+
+  constructor() { }
+
+  ngOnInit(){
+    this.loginForm= new FormGroup (
+      {
+        email : new FormControl('',[Validators.required, Validators.email]),
+        password:  new FormControl('',[Validators.required, Validators.minLength(6)])
+      }
+    );
+  }
+
+  onLogin(){
+    
+  }
+
+}

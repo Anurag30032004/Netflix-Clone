@@ -14,6 +14,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -22,7 +24,7 @@ import {MatInputModule} from '@angular/material/input';
     HomeComponent,
     SearchComponent,
     MovieDetailsComponent,
-    LoginComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,7 @@ import {MatInputModule} from '@angular/material/input';
     MatButtonModule,
     BrowserAnimationsModule,
     MatInputModule,
+    MatIconModule
   ],
   providers: [MovieApiServiceService],
   bootstrap: [AppComponent]
