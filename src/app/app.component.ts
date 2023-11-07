@@ -1,23 +1,30 @@
-import { Component,HostListener } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './pages/home/home.component';
+import { MovieDetailsComponent } from './pages/movie-details/movie-details.component';
+import { LoginComponent } from './pages/login/login.component';
+import { SearchModule } from './search/search.module';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    MovieDetailsComponent,
+    LoginComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    SearchModule, 
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppComponent {
-  title = 'showtime';
-  navbg:any;
-  @HostListener('document:scroll') scrollover(){
-    console.log(document.body.scrollTop,'scrolllength#');
-    
-    if(document.body.scrollTop > 0 || document.documentElement.scrollTop > 0)
-    {
-      this.navbg = {
-        'background-color':'#000000'
-      }
-    }else
-    {
-        this.navbg = {}
-    }
-  }
+export class AppModule { }

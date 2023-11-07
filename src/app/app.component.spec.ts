@@ -12,10 +12,10 @@ describe('AppComponent', () => {
 
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges(); // Trigger change detection
+    fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create home component', () => {
     expect(component).toBeTruthy();
   });
 
